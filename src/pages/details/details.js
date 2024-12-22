@@ -1,4 +1,3 @@
-
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FoodRecipeContext } from "../../Components/Context/context";
@@ -6,7 +5,8 @@ import "./details.css";
 
 export function Details() {
   const { id } = useParams();
-  const { recipeDetails, setRecipeDetails, handleAddtoFav ,favList} = useContext(FoodRecipeContext);
+  const { recipeDetails, setRecipeDetails, handleAddtoFav, favList } =
+    useContext(FoodRecipeContext);
 
   useEffect(() => {
     async function getRecipeDetails() {
@@ -17,7 +17,7 @@ export function Details() {
         const data = await response.json();
         if (data?.data?.recipe) {
           setRecipeDetails(data?.data);
-        } 
+        }
       } catch (err) {
         console.log(err);
       }
@@ -47,9 +47,12 @@ export function Details() {
           onClick={() => handleAddtoFav(recipeDetails.recipe)}
           className="add-to-fav-btn"
         >
-         {
-            favList.findIndex(item=>item.id===recipeDetails?.recipe?.id) !==-1  ? "Remove From Fav" :"Add To Fav"
-         }
+          {favList &&
+          favList.length > 0 &&
+          favList.findIndex((item) => item.id === recipeDetails?.recipe?.id) !==
+            -1
+            ? "Remove From Fav"
+            : "Add To Fav"}
         </button>
         <div>
           <p className="Ingredients-heading">Ingredients:</p>
