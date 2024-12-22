@@ -1,0 +1,36 @@
+/* Navbar-------Styling */
+.Navbar{
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+}
+.search{
+    box-shadow: 0px 5px 9px 0px #d4d2d2;
+    width: 290px;
+    height: 30px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid bisque;
+    padding: 6px;
+    color: rgb(0, 32, 59);
+    font-size: 17px;
+}
+.navlink
+{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navlink-active{
+    text-decoration: none;
+    font-size: 19px;
+    color:red;
+    background-color: #d4d2d2;
+    border-radius: 5px;
+    width:75px;
+    height: 29px;
+    padding: 0px 7px;
+}
